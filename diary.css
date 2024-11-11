@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.diary-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.diary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar input {
+  border: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.mood-selector {
+  display: flex;
+  gap: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mood-emoji {
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mood-emoji:hover {
+  transform: scale(1.2);
+}
+
+.diary-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+  background-image: linear-gradient(#e5e5e5 1px, transparent 1px);
+  background-size: 100% 30px;
+}
+
+.diary-textarea {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  font-size: 16px;
+  line-height: 30px;
+  background: transparent;
+  resize: none;
+}
+
+.diary-textarea:focus {
+  outline: none;
+}
+
+.nav-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.saved-diaries {
+  display: none;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.diary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.diary-card:hover {
+  transform: translateX(10px);
+}
+
+/* Additional CSS for theme-selector.css */
+.saved-diaries {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.diary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.diary-card:hover {
+  transform: translateX(10px);
+}
+
+.diary-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.diary-card p {
+  color: #666;
+}
+
+/* Update nav-buttons styles */
+.nav-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 5px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}

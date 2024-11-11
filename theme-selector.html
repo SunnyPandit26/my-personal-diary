@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Theme</title>
+    <link rel="stylesheet" href="theme-selector.css">
+    
+</head>
+
+<body>
+    <div class="theme-selector">
+        <h1>Choose Your Theme</h1>
+        <div class="theme-grid">
+            <div class="theme-card1" onclick="selectTheme('sunset')">Sunset Dream</div>
+            <div class="theme-card2" onclick="selectTheme('ocean')">Ocean Breeze</div>
+            <div class="theme-card3" onclick="selectTheme('autumn')">Autumn Leaves</div>
+            <div class="theme-card4" onclick="selectTheme('twilight')">Twilight Hour</div>
+            <div class="theme-card5" onclick="selectTheme('spring')">Spring Morning</div>
+            <div class="theme-card6" onclick="selectTheme('desert')">Desert Sand</div>
+        </div>
+    </div>
+
+    <!-- Added saved entries section -->
+    <div class="saved-diaries" id="savedDiaries" style="display: none;"></div>
+
+    <div class="nav-buttons">
+        <button class="nav-button" onclick="toggleView()">View Entries</button>
+        <button class="nav-button" onclick="goToDiary()">New Entry</button>
+    </div>
+
+    <script>
+        function selectTheme(theme) {
+            localStorage.setItem('diaryTheme', theme);
+            window.location.href = 'diary.html';
+        }
+
+        function goToDiary() {
+            window.location.href = 'diary.html';
+        }
+
+        function toggleView() {
+            const themeSelector = document.querySelector('.theme-selector');
+            const savedDiaries = document.getElementById('savedDiaries');
+            const viewButton = document.querySelector('.nav-button');
+
+            if (savedDiaries.style.display === 'none') {
+                themeSelector.style.display = 'none';
+                savedDiaries.style.display = 'block';
+                viewButton.textContent = 'Show Themes';
+                displaySavedEntries();
+            } else {
+                themeSelector.style.display = 'block';
+                savedDiaries.style.display = 'none';
+                viewButton.textContent = 'View Saved';
+            }
+        }
+
+        function deleteEntry(index, event) {
+            // Stop the click event from bubbling up to the card
+            event.stopPropagation();
+
+            if (confirm('Are you sure you want to delete this entry?')) {
+                let entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+                entries.splice(index, 1);
+                localStorage.setItem('diaryEntries', JSON.stringify(entries));
+                displaySavedEntries();
+            }
+        }
+
+        function displaySavedEntries() {
+            const savedDiaries = document.getElementById('savedDiaries');
+            const entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+
+            savedDiaries.innerHTML = '';
+            entries.forEach((entry, index) => {
+                const card = document.createElement('div');
+                card.className = 'diary-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3>${new Date(entry.date).toLocaleDateString()} ${entry.mood}</h3>
+                        <button class="delete-btn" onclick="deleteEntry(${index}, event)">🗑️</button>
+                    </div>
+                    <p>${entry.text.substring(0, 100)}...</p>
+                `;
+                card.onclick = () => viewFullEntry(index);
+                savedDiaries.appendChild(card);
+            });
+        }
+
+        function viewFullEntry(index) {
+            localStorage.setItem('viewIndex', index);
+            window.location.href = 'diary.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Diary</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+    <div class="welcome-screen">
+        <div class="personal-diary">📔My personal diary</div>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="startDiary()">Start Your Diary</button>
+    </div>
+
+    <script>
+        function startDiary() {
+            const userName = document.getElementById('username').value;
+            if (userName.trim() === '') {
+                alert('Please enter your name');
+                return;
+            }
+            localStorage.setItem('diaryUserName', userName);
+            window.location.href = 'theme-selector.html';
+        }
+    </script>
+</body>
+
+</html>
