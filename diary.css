@@ -64,6 +64,7 @@ body {
   min-height: 600px;
   background-image: linear-gradient(#e5e5e5 1px, transparent 1px);
   background-size: 100% 30px;
+   background-color: rgba(126, 88, 88, 0.07);
 }
 
 .diary-textarea {
