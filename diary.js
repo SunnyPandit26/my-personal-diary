@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
       colors: ['#ffd93d', '#ff6b6b'],
       backgroundImage: 'url("autumn-bg.jpg")'
     },
-    Dolphins: {
+    Sand: {
       colors: ['#6c5b7b', '#c06c84'],
-      backgroundImage: 'url("dolphin.jpg")',
+      backgroundImage: 'url("pexels-mitchel3uo-3694711.jpg")',
     },
    Majestic: {
       colors: ['#2af598', '#009efd'],
