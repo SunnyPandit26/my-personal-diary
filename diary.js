@@ -27,32 +27,31 @@ window.onload = function () {
 document.addEventListener('DOMContentLoaded', function() {
   const theme = localStorage.getItem('diaryTheme');
   const themes = {
-    sunset: {
+    Ocean: {
       colors: ['#ff6b6b', '#4ecdc4'],
-      backgroundImage: 'url("sunset-bg.jpg")'
+      backgroundImage: 'url("pexels-shvetsa-4014919.jpg")'
     },
-    ocean: {
+    Clear_Sky: {
       colors: ['#a8e6cf', '#3d84a8'],
       backgroundImage: 'url("ocean-bg.jpg")'
     },
-    autumn: {
+    Peacfull: {
       colors: ['#ffd93d', '#ff6b6b'],
       backgroundImage: 'url("autumn-bg.jpg")'
     },
-    twilight: {
+    Dolphins: {
       colors: ['#6c5b7b', '#c06c84'],
-      backgroundImage: 'url("twilight-bg.jpg"), url("mountain-bg.jpg")',
+      backgroundImage: 'url("dolphin.jpg")',
     },
-    spring: {
+   Majestic: {
       colors: ['#2af598', '#009efd'],
       backgroundImage: 'url("spring-bg.jpg")'
     },
-    desert: {
+    Diary: {
       colors: ['#f6d365', '#fda085'],
       backgroundImage: 'url("desert-bg.jpg")'
     }
   };
-
   if (theme && themes[theme]) {
     document.body.style.background = `linear-gradient(45deg, ${themes[theme].colors[0]}, ${themes[theme].colors[1]})`;
     document.body.style.backgroundImage = themes[theme].backgroundImage;
