@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     twilight: {
       colors: ['#6c5b7b', '#c06c84'],
-      backgroundImage: 'url("mountain-bg.jpg")'
+      backgroundImage: 'url("twilight-bg.jpg"), url("mountain-bg.jpg")',
     },
     spring: {
       colors: ['#2af598', '#009efd'],
