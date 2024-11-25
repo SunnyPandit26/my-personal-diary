@@ -1,14 +1,13 @@
-// Declare variables
+
 let currentMood = '';
 let currentPage = 1;
 const maxWordsPerPage = 500;
 
-// Add back button functionality
 function goBack() {
   window.location.href = 'theme-selector.html';
 }
 
-// Check if we're viewing a saved entry
+
 window.onload = function () {
   const viewIndex = localStorage.getItem('viewIndex');
   if (viewIndex !== null) {
@@ -23,7 +22,6 @@ window.onload = function () {
   }
 };
 
-// Set theme from localStorage
 document.addEventListener('DOMContentLoaded', function() {
   const theme = localStorage.getItem('diaryTheme');
   const themes = {
@@ -60,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.backgroundRepeat = 'no-repeat';
   }
 
-  // Set today's date by default
+ 
   document.getElementById('diaryDate').valueAsDate = new Date();
 });
 
@@ -95,7 +93,7 @@ function saveDiary() {
 
   alert('Diary entry saved successfully!');
   document.getElementById('diaryText').value = '';
-  currentPage = 1; // Reset page count after saving
+  currentPage = 1; 
 }
 
 function toggleView() {
@@ -154,7 +152,6 @@ function viewFullEntry(index) {
   toggleView();
 }
 
-// Handle text overflow and pagination
 const diaryTextArea = document.getElementById('diaryText');
 const wordCountDisplay = document.createElement('div');
 wordCountDisplay.className = 'word-count';
@@ -187,5 +184,4 @@ nextPageButton.addEventListener('click', function() {
   nextPageButton.style.display = 'none';
 });
 
-// Set today's date by default
 document.getElementById('diaryDate').valueAsDate = new Date();
