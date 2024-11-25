@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function selectMood(mood) {
   currentMood = mood;
   document.querySelectorAll('.mood-emoji').forEach(emoji => {
-    emoji.style.transform = 'scale(1)';
+    emoji.style.transform = 'scale(1.5)';
   });
   event.target.style.transform = 'scale(1.2)';
 }
